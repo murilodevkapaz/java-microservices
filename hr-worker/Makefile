@@ -13,8 +13,10 @@ help:	      ## This help
 
 run: # iniciar projeto
 	@echo "-- [RUN] Starting HR-WORKER"
-	@mvn spring-boot:run -Dspring-boot.run.jvmArguments="-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
-
+	@mvn clean spring-boot:run \
+  -s settings-clean.xml \
+  -Dspring-boot.run.jvmArguments="-Dserver.port=8001 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005"
 
 mvnInstall:
-	@mvn clean install -U -s ~/.m2/settings.xml
+	@mvn clean install -U -s settings-clean.xml
+

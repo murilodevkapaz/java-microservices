@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.murilo.microservices.hr_payroll.entities.Worker;
 
 @Component // this is a componente managed by Spring
-@FeignClient(name = "hr-worker", url = "localhost:8001", path = "/workers") // name of the service to communicate with
+@FeignClient(name = "hr-worker", path = "/workers") // name of the service to communicate with
 public interface IWorkerFeignClients {
 
     @GetMapping(value = "/{id}")
