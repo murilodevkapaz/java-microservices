@@ -10,23 +10,17 @@ import org.springframework.web.client.RestTemplate;
 
 import com.murilo.microservices.hr_payroll.entities.Payment;
 import com.murilo.microservices.hr_payroll.entities.Worker;
+import com.murilo.microservices.hr_payroll.feignclients.IWorkerFeignClients;
 
 @Service
 public class PaymentService {
 
-    @Value("${hr-worker.host}")
-    private String workerHost;
-
     @Autowired
-    private RestTemplate restTemplate;
+    private IWorkerFeignClients workerFeignClients;
 
     public Payment getPayment(long workerId, int days) {
 
-        Map<String, String> uriVariables = new HashMap<>();
-
-        uriVariables.put("id", String.valueOf(workerId));
-
-        Worker worker = restTemplate.getForObject(workerHost + "/workers/{id}", Worker.class, uriVariables);
+        Worker worker = workerFeignClients.findById(workerId).getBody();
 
         double dailyIncome = worker.getDailyIncome();
         return new Payment(worker.getName(), dailyIncome, days);

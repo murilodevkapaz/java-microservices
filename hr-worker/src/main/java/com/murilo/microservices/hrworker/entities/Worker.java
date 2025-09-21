@@ -1,4 +1,4 @@
-package com.murilo.microservices.hrworker.entities;
+package com.murilo.microservices.hr_worker.entities;
 
 import java.io.Serializable;
 import javax.persistence.Entity;

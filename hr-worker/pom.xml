@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.murilo.microservices</groupId>
-	<artifactId>hrworker</artifactId>
+	<artifactId>hr-worker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hrworker</name>
+	<name>hr-worker</name>
 	<description>Demo project for Spring Boot</description>
 	<url />
 	<licenses>

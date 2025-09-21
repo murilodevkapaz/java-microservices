@@ -1,13 +1,13 @@
-package com.murilo.microservices.hrworker.resources;
+package com.murilo.microservices.hr_worker.resources;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.murilo.microservices.hrworker.repositories.IWorkerRepository;
+import com.murilo.microservices.hr_worker.repositories.IWorkerRepository;
 import java.util.List;
 import org.springframework.http.ResponseEntity;
-import com.murilo.microservices.hrworker.entities.Worker;
+import com.murilo.microservices.hr_worker.entities.Worker;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
