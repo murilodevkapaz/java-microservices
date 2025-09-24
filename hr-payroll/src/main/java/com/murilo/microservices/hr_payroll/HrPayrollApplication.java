@@ -2,10 +2,10 @@ package com.murilo.microservices.hr_payroll;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@RibbonClient(name = "hr-worker")
+@EnableDiscoveryClient
 @EnableFeignClients
 @SpringBootApplication
 public class HrPayrollApplication {
