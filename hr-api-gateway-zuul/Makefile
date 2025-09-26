@@ -21,7 +21,9 @@ run: # iniciar projeto
 	@echo "-- [RUN] Starting HR-API-GATEWAY-ZUUL"
 	@mvn spring-boot:run -s settings-clean.xml -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8890"
 
-
+# run: # iniciar projeto
+# 	@echo "-- [RUN] Starting HR-API-GATEWAY-ZUUL"
+# 	@mvn spring-boot:run -s settings-clean.xml -Dspring-boot.run.jvmArguments="-Xdebug
 
 mvnInstall:
 	@mvn clean install -U -s settings-clean.xml
