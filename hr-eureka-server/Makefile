@@ -19,7 +19,7 @@ help:	      ## This help
 
 run: # iniciar projeto
 	@echo "-- [RUN] Starting HR-EUREKA"
-	@mvn spring-boot:run -s settings-clean.xml -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8888"
+	@mvn spring-boot:run -s settings-clean.xml -Dspring-boot.run.jvmArguments="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8890"
 
 # run: # iniciar projeto
 # 	@echo "-- [RUN] Starting HR-WORKER"
