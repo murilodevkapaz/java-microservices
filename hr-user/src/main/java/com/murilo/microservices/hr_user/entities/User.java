@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -24,10 +25,12 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @Column(unique = true)
     private String email;
     private String password;
 
-    @ManyToMany(fetch= FetchType.EAGER) // EAGER: load roles together user is loaded
+    @ManyToMany(fetch = FetchType.EAGER) // EAGER: load roles together user is loaded
     @JoinTable(name = "tb_user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
@@ -77,7 +80,7 @@ public class User implements Serializable {
     public Set<Role> getRoles() {
         return roles;
     }
-    
+
     public void addRole(Role role) {
         this.roles.add(role);
     }
