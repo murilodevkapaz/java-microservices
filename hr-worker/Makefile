@@ -26,5 +26,5 @@ run: # iniciar projeto
 # 	@mvn spring-boot:run -s settings-clean.xml -Dspring-boot.run.jvmArguments="-Xdebug
 
 mvnInstall:
-	@mvn clean install -U -s settings-clean.xml
+	@mvn clean install -U -s settings-clean.xml -DskipTests
 

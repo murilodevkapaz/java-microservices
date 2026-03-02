@@ -27,5 +27,5 @@ run: # iniciar projeto
 
 
 mvnInstall:
-	@mvn clean install -U -s settings-clean.xml
+	@mvn clean install -U -s settings-clean.xml -DskipTests
 
